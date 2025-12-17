@@ -8,8 +8,10 @@ It is built with **Flask**, **SQLite**, **Numpy**, and **Matplotlib**, and allow
 
 
 Screenshots:
-![Dashboard Demo](static/demo_1.png)
-![Dashboard Demo](static/demo_2.png)
+<div align="center">
+  <img src="static/demo_1.png" width="45%" alt="Dashboard View" />
+  <img src="static/demo_2.png" width="45%" alt="Analysis View" />
+</div>
 
 
 Key Features:
