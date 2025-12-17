@@ -7,6 +7,10 @@ Introduction:
 It is built with **Flask**, **SQLite**, **Numpy**, and **Matplotlib**, and allows user to generate statistical visualizations of spending distributions. 
 
 
+Screenshots:
+![Dashboard Demo](static/demo_1.png)
+![Dashboard Demo](static/demo_2.png)
+
 
 Key Features:
 - Data Visualization:
