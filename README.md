@@ -1,71 +1,61 @@
-PyFinance Tracker
-A Full-Stack Spending Tracking & Visualization Tool
-PyFinance Tracker is a lightweight web application designed to help users track their daily cash flow and spending habits.
+# PyFinance Tracker
+A Full-Stack Spendings Tracjing & Visualization Tool
 
-It is built with Flask, SQLite, NumPy, and Matplotlib, allowing users to generate statistical visualizations of spending distributions.
+Introduction:
+**PyFinance Tracker** is a lightweight web application designed to help users track their daily cash flow and spending habits. 
 
-Key Features
-Data Visualization:
+It is built with **Flask**, **SQLite**, **Numpy**, and **Matplotlib**, and allows user to generate statistical visualizations of spending distributions. 
 
-Generate high-DPI histograms.
 
-Use NumPy for efficient data vectorization and dynamic binning.
 
-Use Matplotlib 'Agg' for thread-safe rendering.
+Key Features:
+- Data Visualization:
+    - Generate 500DPI histograms. 
+    - Use Numpy for efficient data vectorization and dynamic binning. 
+    - Use Matplitlib 'Agg' for thread-safe rendering. 
+- Transaction Management:
+    - Support **CRUD** operations for expense records. 
+    - Defensive Programming: Implements server side validation and error handling. 
+    - Parameters Unpacking: clean data passing between backend and frontend. 
+- Clean user-interface:
+    - Responsive ghost buttons for dangerous actions. 
 
-Transaction Management:
 
-Support CRUD operations for expense records.
 
-Defensive Programming: Implements server-side validation and error handling.
+Tech Stack:
 
-Parameter Unpacking: Clean data passing between backend and frontend.
+    - Backend: Python, Flask
+    - Database: SQLite3
+    - Data Processing: Numpy, Matplotlib
+    - Frontend: HTML, CSS, Jinja2 Templates
 
-Clean User Interface:
 
-Responsive ghost buttons for dangerous actions.
 
-Tech Stack
-Backend: Python, Flask
+How to run locally
 
-Database: SQLite3
+    1. Clone the repository
+        git clone https://github.com/zjc-0680/PyFinance-Tracker.git
+    2. Create virtual environment
+        python -m venv venv
+        Windows: venv/Scripts/activate
+        Mac/Linux: source venv/bin.activate
+    3. Install dependencies
+        ```bash
+        pip install -r requirements.txt
+        ```
+    4. Run the App
+        In the terminal, enter:
+        python app.py
 
-Data Processing: NumPy, Matplotlib
+    5. Enjoy the App:
+        Open your browser and visit:
+        `http://127.0.0.1:5000/` 
+    
+Future Improvements:
 
-Frontend: HTML, CSS, Jinja2 Templates
+    - Add user authentication
+    - Implement weekly/monthly/yearly spending reports
+    - Deploy to cloud platforms
 
-How to Run Locally
-Clone the repository
 
-Bash
-
-git clone https://github.com/zjc-0680/PyFinance-Tracker.git
-Create virtual environment
-
-Bash
-
-python -m venv venv
-
-# Windows:
-venv\Scripts\activate
-
-# Mac/Linux:
-source venv/bin/activate
-Install dependencies
-
-Bash
-
-pip install -r requirements.txt
-Run the App In the terminal, enter:
-
-Bash
-
-python app.py
-Enjoy the App Open your browser and visit: http://127.0.0.1:5000/
-
-Future Improvements
-[ ] Add user authentication
-
-[ ] Implement weekly/monthly/yearly spending reports
-
-[ ] Deploy to cloud platforms
+Created by Juncheng Zhu - University of Waterloo
