@@ -12,7 +12,7 @@ Key Features:
 - Data Visualization:
     - Generate 500DPI histograms. 
     - Use Numpy for efficient data vectorization and dynamic binning. 
-    - Use Matplitlib 'Agg' for thread-safe rendering. 
+    - Use Matplotlib 'Agg' for thread-safe rendering. 
 - Transaction Management:
     - Support **CRUD** operations for expense records. 
     - Defensive Programming: Implements server side validation and error handling. 
