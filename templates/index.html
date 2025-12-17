@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title> 
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .box { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border-bottom: 1px solid #ddd; padding: 8px; text-align: left; }
+        input { padding: 10px; margin-right: 10px; }
+        button { cursor: pointer; }
+        .delete-button {
+            padding: 5px 10px;   
+            border: 1px solid;  
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .delete-button:hover {
+            background-color: red;
+            color: white; 
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    {% if received_email %}
+        <div class="box" style="text-align: center; background-color: #f9f9f9;">
+            <h5 style="color: green; margin: 0;">Thanks for sharing your email!</h5>
+        </div>
+    {% else %}
+        <form method="POST" action="/send_email">
+            <div class="box">
+                <input type="email" name="email" 
+                    placeholder="Enter your email to receive daily reports" required
+                    style="font-size: 12px; width: 55%; height: 30px;">
+                <button type="submit" 
+                    style="background-color: lightblue; border-width: 1.5px; font-family: 'Courier New'; padding: 5px 10px;">
+                    Confirm
+                </button>
+            </div>
+        </form>
+    {% endif %}
+    
+    <h1>Daily Spendings</h1>
+    
+    <div class="box">
+        <h3>Add Spendings</h3>
+        <form method="POST" action="/">
+            <input type="text" name="item" placeholder="Item (e.g. Coffee)" required>
+            <input type="number" name="price" step="0.01" placeholder="Amount (in CAD)" required>
+            <button type="submit" style="padding: 10px 20px; background-color: #3972b0; color: white; border: none; border-radius: 4px;">Add</button>
+        </form>
+    </div>
+
+    <div class="box">
+        <h3>History</h3>
+        <table> 
+            <tr>
+                <th>ID</th>
+                <th>Item</th>
+                <th>Amount ($)</th>
+                <th>Operation</th>
+            </tr>
+            {% for row in expenses %}
+            <tr>
+                <td>{{ row['id'] }}</td>
+                <td>{{ row['item_name'] }}</td> 
+                <td>{{ row['amount'] }}</td>
+                <td>
+                    <form action="/delete/{{ row['id'] }}" method="POST" style="display:inline;">
+                        <button type="submit" class="delete-button" onclick="return confirm('Are you sure?');" >
+                            Delete
+                        </button>  
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="box">
+        <div style="margin-top: 10px; text-align: center;">
+            <a href="/visualize" style="text-decoration: none;">
+                <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px;">
+                    Visualize
+                </button>
+            </a>
+        </div>
+
+        {% if plot_available %}
+            <div style="text-align: center; margin-top: 20px;">
+                <img src="{{ url_for('static', filename=plot_image) }}" 
+                     alt="Spending Plot" 
+                     style="max-width: 100%; border: 1px solid #ddd; padding: 5px; border-radius: 5px;">
+            </div>
+        {% endif %}
+        
+        </div>
+</body>
+</html>
