@@ -1,5 +1,5 @@
 # PyFinance Tracker
-A Full-Stack Spendings Tracjing & Visualization Tool
+A Full-Stack Spendings Tracing & Visualization Tool
 
 Introduction:
 **PyFinance Tracker** is a lightweight web application designed to help users track their daily cash flow and spending habits. 
@@ -49,7 +49,7 @@ How to run locally
 
     5. Enjoy the App:
         Open your browser and visit:
-        `http://127.0.0.1:5000/` 
+        `http://127.0.0.1:5000/`
     
 Future Improvements:
 
